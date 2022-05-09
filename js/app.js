@@ -2,6 +2,8 @@ const hamburger = document.querySelector('.hamburger');
 const close = document.querySelector('.closebtn');
 const Navbar = document.querySelector('.mb-nav')
 
+const mobileNavbar = document.querySelectorAll('.mobile-nav')
+
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.add('hidden')
@@ -23,4 +25,16 @@ close.addEventListener('click', () => {
     hamburger.classList.add('border-gray-600')
     Navbar.classList.add('hidden')
     Navbar.classList.remove('block')
+})
+
+
+mobileNavbar.forEach((e) => {
+    e.addEventListener('click', () => {
+        Navbar.classList.add('hidden')
+        Navbar.classList.remove('block')
+        hamburger.classList.remove('hidden')
+        hamburger.classList.add('block')
+        close.classList.remove('block')
+        close.classList.add('hidden')
+    })
 })
